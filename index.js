@@ -6,6 +6,7 @@ import dotenv from "dotenv"
 import userRouter from "./routes/userRouter.js";
 import productRouter from "./routes/productRouter.js";
 import orderRouter from "./routes/orderRouter.js";
+import contactRouter from "./routes/contactRouter.js";
 
 dotenv.config()
 const mongoURI = process.env.MONGO_URL
@@ -31,6 +32,7 @@ app.use(express.json())
 app.use("/api/users", userRouter);
 app.use("/api/products", productRouter);
 app.use("/api/orders", authMiddleware, orderRouter);
+app.use("/api/contact", authMiddleware, contactRouter);
 
 app.listen(3000,
     () => {
