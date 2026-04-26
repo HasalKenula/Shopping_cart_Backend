@@ -29,7 +29,7 @@ app.use(express.json())
 
 
 app.use("/api/users", userRouter);
-app.use("/api/products", authMiddleware, productRouter);
+app.use("/api/products", productRouter);
 app.use("/api/orders", authMiddleware, orderRouter);
 
 app.listen(3000,
